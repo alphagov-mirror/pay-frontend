@@ -12,7 +12,7 @@ pipeline {
   }
 
   libraries {
-    lib("pay-jenkins-library@master")
+    lib("pay-jenkins-library@PP-5670")
   }
   environment {
     RUN_END_TO_END_ON_PR = "${params.runEndToEndTestsOnPR}"
@@ -52,8 +52,8 @@ pipeline {
           env.PACT_TAG = gitBranchName()
         }
         ws('contract-tests-wp') {
-          runPactProviderTests("pay-adminusers", "${env.PACT_TAG}")
-          runPactProviderTests("pay-connector", "${env.PACT_TAG}")
+//          runPactProviderTests("pay-adminusers", "${env.PACT_TAG}")
+          runPactProviderTests("pay-connector", "${env.PACT_TAG}", "frontend")
         }
       }
       post {
