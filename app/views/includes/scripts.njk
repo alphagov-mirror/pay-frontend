@@ -40,6 +40,10 @@
     window.GOVUKFrontend.initAll();
     if (mainWrap.classList.contains('charge-new')) {
       showCardType().init();
+      window.payScripts.helpers.setGlobalChargeId();
+      {% if service.collectBillingAddress %}
+        window.payScripts.helpers.initialiseAddressCountryAutocomplete();
+      {% endif %}
       window.payScripts.inputConfirm.init();
       window.payScripts.formValidation.init();
     } else if (mainWrap.classList.contains('confirm-page')) {
