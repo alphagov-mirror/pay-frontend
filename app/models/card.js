@@ -20,7 +20,7 @@ i18n.configure(i18nConfig)
 const checkCard = function (cardNo, allowed, language, correlationId, subSegment, loggingFields = {}) {
   return new Promise(function (resolve, reject) {
     const startTime = new Date()
-    const data = { cardNumber: parseInt(cardNo) }
+    const data = { cardNumber: cardNo }
 
     i18n.setLocale(language || 'en')
 
