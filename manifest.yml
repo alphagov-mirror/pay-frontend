@@ -13,13 +13,11 @@ applications:
       NODE_ENV: production
       SESSION_ENCRYPTION_KEY: ((card_frontend_session_encryption_key))
       COOKIE_MAX_AGE: '5400000'
-      CONNECTOR_TOKEN_URL: http://card-connector-((space)).apps.internal:8080/v1/frontend/tokens/{chargeTokenId}
-      CONNECTOR_URL: http://card-connector-((space)).apps.internal:8080
-      CONNECTOR_HOST: http://card-connector-((space)).apps.internal:8080
+      CONNECTOR_HOST: ((card_connector_url))
       ANALYTICS_TRACKING_ID: ((card_connector_analytics_tracking_id))
-      CARDID_HOST: http://cardid-((space)).apps.internal:8080
+      CARDID_HOST: ((cardid_url))
       NODE_WORKER_COUNT: '1'
       FRONTEND_URL: https://((card_frontend_url))
-      ADMINUSERS_URL: http://adminusers-((space)).apps.internal:8080
+      ADMINUSERS_URL: ((adminusers_url))
     routes:
       - route: ((card_frontend_url))
